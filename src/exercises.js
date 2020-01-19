@@ -53,43 +53,164 @@ function difference(numbers) {
 }
 
 function max(number) {
-  if (numbers == null || numbers.length < 3 || numbers.length % 2 != 0 ) {
-    return undefined;
-    var undefined2 = true
-  }  else {
-    for (var i = 0; i < numbers.length; i++) {
-      if (isNaN(numbers[i])) {
-        return undefined;
-        var undefined2 = true;
-      }
+if (!number || number.length % 2 == 0 || number.length < 3) {
+  return undefined;
+} else {
+  for (var i = 0; i < number.length; i++) {
+    if (isNaN(number[i])) {
+      var undefined2 = true;
     }
-    var max = numbers[numbers.length]
-    var min = numbers[0]
-    var mid = numbers[numbers.length / 2]
-}
-if (undefined2 = false) {
-  return Math.max(max,min,mid)
+  }
+  if (undefined2 == true) {
+    return undefined;
+  } else {
+    const first = number[0];
+    const middle = number[(number.length - 1)/ 2];
+    const last = number[number.length -1];
+
+    var newArray = [first, middle, last];
+
+    const greatest = Math.max(...newArray);
+
+    return greatest;
+  }
 }
 }
 
 function middle(values) {
-  // write your code here
-}
+  if (!values || values.length % 2 == 0 || values.length < 3) {
+    return [];
+  } else {
+    const middle = values[(values.length - 1)/ 2];
+    const middleMinus = values[((values.length - 1)/ 2)-1]
+    const middlePlus = values[((values.length - 1)/ 2)+1]
+
+      var newArray = [middleMinus, middle, middlePlus];
+      return newArray;
+    }
+  }
 
 function increasing(numbers) {
-  // write your code here
+  var stop = true;
+  if (!numbers || numbers.length < 3) {
+    return false;
+  } else {
+    for (var i = 0; i < numbers.length; i++) {
+      if (isNaN(numbers[i]) || numbers[i] != Math.round(numbers[i])) {
+        var undefined2 = true;
+      }
+    }
+    if (undefined2) {
+      return false;
+    } else {
+      for (var i = 0; i < numbers.length -2; i++) {
+        if (numbers[i] == numbers[i+1] -1 && numbers[i] == numbers[i + 2] -2 && stop) {
+          return true;
+          var stop = false;
+        }
+      }
+      if (stop != false) {
+        return false
+      }
+    }
+  }
 }
 
 function everywhere(values, x) {
-  // write your code here
+  var check = true
+  if (!values || !x || values.length < 1) {
+    return false;
+  } else {
+    for (var i = 1; i < values.length - 1; i++) {
+      if (values[i] !== x && values[i-1] !== x && values[i+1] !== x) {
+        var check = false
+      }
+    }
+    if (check) {
+      return true
+    } else {
+      return false
+    }
+  }
 }
 
 function consecutive(numbers) {
-  // write your code here
+  var stop = true;
+  if (!numbers || numbers.length < 3) {
+    return false;
+  } else {
+    for (var i = 0; i < numbers.length; i++) {
+      if (isNaN(numbers[i]) || numbers[i] != Math.round(numbers[i])) {
+        var undefined2 = true;
+      }
+    }
+    if (undefined2) {
+      return false;
+    } else {
+      for (var i = 0; i < numbers.length -2; i++) {
+        if ((numbers[i]/2) - (Math.floor(numbers[i]/2)) == (numbers[i + 1]/2) - (Math.floor(numbers[i + 1]/2)) && (numbers[i]/2) - (Math.floor(numbers[i]/2)) == (numbers[i + 2]/2) - (Math.floor(numbers[i + 2]/2)) && stop) {
+          return true;
+          var stop = false;
+        }
+      }
+      if (stop != false) {
+        return false
+      }
+    }
+  }
 }
 
 function balance(numbers) {
-  // write your code here
+  var max = -999999999999;
+  var repeat = 1;
+  if (!numbers || numbers.length < 2) {
+    return false;
+  } else {
+    for (var i = 0; i < numbers.length; i++) {
+      if (isNaN(numbers[i]) || numbers[i] != Math.round(numbers[i])) {
+        var undefined2 = true;
+      }
+    }
+    while (repeat > 0) {
+      var sum = 0
+      var repeat = -1
+      //errored part
+      if (numbers.length = 2) {
+        if (numbers[0] == numbers[1]) {
+          undefined2 = false
+        } else {
+          undefined2 = true
+        }
+        //no more error after
+      } else {
+        for (var i = 0; i < numbers.length; i++) {
+          if (numebers[i] > min) {
+            max = numbers[i]
+          }
+        }
+        for (var i = 0; i < numbers.length; i++) {
+          if (numbers[i] == min) {
+            var repeat = repeat + 1;
+          }
+        }
+        for (var i = 0; i < numbers.length; i++) {
+          if (numbers[i] > 0) {
+            sum = sum + numbers[i]
+          } else {
+            max = max + numbers[i]
+          }
+        }
+        if (sum == max) {
+          undefined2 = false;
+        }
+      }
+    }
+    if (undefined2) {
+      return false;
+    } else {
+      return true;
+    }
+  }
   console.log("test");
 }
 
