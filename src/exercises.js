@@ -11,7 +11,7 @@ function commonEnd(a, b) {
 }
 
 function endsMeet(values, n) {
-  var ans = []
+  var ans = [];
   if (values == undefined || n < 0 || values.length < n ) {
     return [];
   } else {
