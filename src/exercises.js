@@ -161,57 +161,44 @@ function consecutive(numbers) {
 }
 
 function balance(numbers) {
-  var max = -999999999999;
-  var repeat = 1;
+  var max = -999999999999
+  var rebel = 0
+  var add = 0;
   if (!numbers || numbers.length < 2) {
     return false;
   } else {
     for (var i = 0; i < numbers.length; i++) {
-      if (isNaN(numbers[i]) || numbers[i] != Math.round(numbers[i])) {
-        var undefined2 = true;
+      if (numbers[i] > max) {
+        max = numbers[i]
+        maxPlace = i
       }
     }
-    while (repeat > 0) {
-      var sum = 0
-      var repeat = -1
-      //errored part
-      if (numbers.length = 2) {
+    for (var i = 0; i < numbers.length; i++) {
+      if (numbers[i] > 0 && numbers[i]!= max) {
+        rebel = rebel + numbers[i]
+      } else if (numbers[i] != max) {
+        max = max + numbers[i]
+      }
+    }
+    if (max == rebel) {
+      return true;
+    } else {
+      if (numbers.length == 2) {
         if (numbers[0] == numbers[1]) {
-          undefined2 = false
-        } else {
-          undefined2 = true
+          return true;
         }
-        //no more error after
       } else {
         for (var i = 0; i < numbers.length; i++) {
-          if (numebers[i] > min) {
-            max = numbers[i]
-          }
+          add = add + numbers[i]
         }
-        for (var i = 0; i < numbers.length; i++) {
-          if (numbers[i] == min) {
-            var repeat = repeat + 1;
-          }
-        }
-        for (var i = 0; i < numbers.length; i++) {
-          if (numbers[i] > 0) {
-            sum = sum + numbers[i]
-          } else {
-            max = max + numbers[i]
-          }
-        }
-        if (sum == max) {
-          undefined2 = false;
+        if (add == 0) {
+          return true;
+        } else {
+          return false;
         }
       }
     }
-    if (undefined2) {
-      return false;
-    } else {
-      return true;
-    }
   }
-  console.log("test");
 }
 
 function clumps(values) {
